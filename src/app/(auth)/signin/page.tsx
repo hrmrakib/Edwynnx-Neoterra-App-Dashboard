@@ -63,9 +63,24 @@ export default function SignInPage() {
   };
 
   return (
-    <div className='min-h-screen bg-orange-50 flex items-center justify-center p-4'>
-      <Card className='w-full max-w-xl bg-white shadow-lg border-0'>
-        <CardContent className='pb-8'>
+    <div className='min-h-screen bg-[#111827] flex items-center justify-center'>
+      <div className='w-full max-h-screen overflow-hidden bg-transparent rounded-sm shadow-lg relative'>
+        <Image
+          src='/auth-banner.png'
+          alt='Logo'
+          width={1200}
+          height={800}
+          className='h-full w-full object-cover'
+        />
+
+        {/* Centered text */}
+        <h2 className='absolute inset-0 flex items-center justify-center text-white font-bold text-4xl'>
+          Neoterra
+        </h2>
+      </div>
+
+      <Card className='w-full bg-transparent shadow-lg border-0'>
+        <CardContent className='w-[80%] mx-auto bg-[#1F2937] p-8'>
           {/* Logo */}
           <div className='flex items-center justify-center text-center'>
             <Image src='/logo.png' alt='Logo' width={200} height={200} />
