@@ -6,14 +6,14 @@ import { ArrowLeft, Edit } from "lucide-react";
 
 export default function PersonalInformationPage() {
   return (
-    <div className='flex min-h-screen bg-[#FFFFFF]'>
+    <div className='flex min-h-screen bg-transparent'>
       <div className='flex-1 w-full'>
         <main className='w-full p-4 md:p-6'>
           <div className=' mx-auto'>
             <div className='mb-6 flex items-center justify-between'>
               <Link
                 href='/setting'
-                className='inline-flex items-center text-primary hover:text-teal-700'
+                className='inline-flex items-center text-white hover:text-[#66F1FC]'
               >
                 <ArrowLeft className='mr-2 h-6 w-6' />
                 <span className='text-2xl font-semibold'>
@@ -22,7 +22,7 @@ export default function PersonalInformationPage() {
               </Link>
               <Link
                 href='/setting/personal-information/edit'
-                className='bg-primary text-white rounded-md px-4 py-2'
+                className='bg-[#66F1FC] text-black rounded-md px-4 py-2'
               >
                 <button className='flex items-center gap-2'>
                   <Edit className='h-4 w-4' />
@@ -31,7 +31,7 @@ export default function PersonalInformationPage() {
               </Link>
             </div>
 
-            <div className='bg-[#ffffff93] rounded-md p-6'>
+            <div className='bg-transparent rounded-md p-6'>
               <div className='flex flex-col md:flex-row gap-8 mb-6'>
                 {/* Profile Photo Section */}
                 <div className='w-full md:w-64 flex flex-col items-center border border-gray-600 rounded-md px-6 py-10'>
@@ -43,8 +43,8 @@ export default function PersonalInformationPage() {
                       className='object-cover'
                     />
                   </div>
-                  <span className='text-base text-primary'>Profile</span>
-                  <span className='font-medium text-lg text-primary'>
+                  <span className='text-base text-white'>Profile</span>
+                  <span className='font-medium text-lg text-white'>
                     Admin
                   </span>
                 </div>
@@ -52,26 +52,26 @@ export default function PersonalInformationPage() {
                 {/* User Information Section */}
                 <div className='flex-1 space-y-6'>
                   <div className='flex flex-col gap-1'>
-                    <div className='text-lg font-medium text-primary'>Name</div>
-                    <div className='text-lg text-primary px-2 py-3 rounded-md border border-gray-500'>
+                    <div className='text-lg font-medium text-white'>Name</div>
+                    <div className='text-lg text-white px-2 py-3 rounded-md border border-gray-500'>
                       Fazu Pagla
                     </div>
                   </div>
 
                   <div className='flex flex-col gap-1'>
-                    <div className='text-lg font-medium text-primary'>
+                    <div className='text-lg font-medium text-white'>
                       Email
                     </div>
-                    <div className='text-lg text-primary px-2 py-3 rounded-md border border-gray-500'>
+                    <div className='text-lg text-white px-2 py-3 rounded-md border border-gray-500'>
                       fazu@gmail.gom
                     </div>
                   </div>
 
                   <div className='flex flex-col gap-1'>
-                    <div className='text-lg font-medium text-primary'>
+                    <div className='text-lg font-medium text-white'>
                       Phone Number
                     </div>
-                    <div className='text-lg text-primary px-2 py-3 rounded-md border border-gray-500'>
+                    <div className='text-lg text-white px-2 py-3 rounded-md border border-gray-500'>
                       9999999999
                     </div>
                   </div>

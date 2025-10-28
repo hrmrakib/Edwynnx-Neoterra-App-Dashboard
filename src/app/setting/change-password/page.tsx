@@ -72,17 +72,17 @@ export default function ChangePasswordPage() {
   };
 
   return (
-    <div className='flex min-h-screen bg-gray-50'>
+    <div className='flex min-h-screen bg-transparent'>
       <div className='flex-1 w-full'>
         <main className='w-full p-4 md:p-6'>
           <div className='max-w-3xl mx-auto'>
             <div className='mb-6'>
               <Link
                 href='/setting'
-                className='inline-flex items-center text-primary hover:text-teal-700'
+                className='inline-flex items-center text-white hover:text-teal-700'
               >
                 <ArrowLeft className='mr-2 h-6 w-6' />
-                <span className='text-2xl text-[#760C2A] font-semibold'>
+                <span className='text-2xl text-[#ffffff] font-semibold'>
                   Change Password
                 </span>
               </Link>
@@ -99,7 +99,7 @@ export default function ChangePasswordPage() {
               <div className='space-y-2'>
                 <Label
                   htmlFor='newPassword'
-                  className='text-lg font-medium text-primary'
+                  className='text-lg font-medium text-white'
                 >
                   New Password
                 </Label>
@@ -110,11 +110,11 @@ export default function ChangePasswordPage() {
                     type={showNewPassword ? "text" : "password"}
                     value={formData.newPassword}
                     onChange={handleChange}
-                    className='text-lg font-medium text-primary'
+                         className='w-full h-12 !bg-transparent text-lg text-white'
                   />
                   <button
                     type='button'
-                    className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-500'
+                    className='absolute right-3 top-1/2 -translate-y-1/2 text-lg font-medium text-white'
                     onClick={() => setShowNewPassword(!showNewPassword)}
                   >
                     {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -125,7 +125,7 @@ export default function ChangePasswordPage() {
               <div className='space-y-2'>
                 <Label
                   htmlFor='confirmPassword'
-                  className='text-lg font-medium text-primary'
+                  className='text-lg font-medium text-white'
                 >
                   Confirm New Password
                 </Label>
@@ -136,11 +136,11 @@ export default function ChangePasswordPage() {
                     type={showConfirmPassword ? "text" : "password"}
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    className='text-lg font-medium text-primary'
+                    className='w-full h-12 !bg-transparent text-lg text-white'
                   />
                   <button
                     type='button'
-                    className='absolute right-3 top-1/2 -translate-y-1/2 text-lg font-medium text-primary'
+                    className='absolute right-3 top-1/2 -translate-y-1/2 text-lg font-medium text-white'
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
                     {showConfirmPassword ? (
@@ -155,7 +155,7 @@ export default function ChangePasswordPage() {
               <div className='pt-2'>
                 <Button
                   type='submit'
-                  className='bg-primary hover:bg-teal-700 text-lg font-medium text-white'
+                  className='bg-[#66F1FC] hover:bg-teal-700 text-lg font-medium text-black rounded-md px-4 py-2'
                 >
                   Update Password
                 </Button>

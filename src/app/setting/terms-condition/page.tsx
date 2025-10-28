@@ -8,14 +8,14 @@ export default function TermsConditionPage() {
   // const { data: terms, isLoading } = useGetTermsAndConditionsQuery({});
 
   return (
-    <div className='flex min-h-screen bg-gray-50'>
+    <div className='flex min-h-screen bg-transparent'>
       <div className='flex-1 w-full'>
         <main className='w-full p-4 md:p-6'>
           <div className='max-w-3xl mx-auto'>
             <div className='mb-6 flex items-center justify-between'>
               <Link
                 href='/setting'
-                className='inline-flex items-center text-primary hover:text-teal-700'
+                className='inline-flex items-center text-white hover:text-[#66F1FC]'
               >
                 <ArrowLeft className='mr-2 h-4 w-4' />
                 <span className='text-xl font-semibold'>Terms & Condition</span>
@@ -23,7 +23,7 @@ export default function TermsConditionPage() {
 
               <Link
                 href='/setting/terms-condition/edit'
-                className='inline-flex items-center text-primary hover:text-teal-700 border border-[#760C2A] rounded-md px-4 py-1.5'
+                className='inline-flex items-center text-[#66F1FC] hover:text-[#66F1FC] border border-[#66F1FC] rounded-md px-4 py-1.5'
               >
                 <span className='text-xl font-semibold'>Edit</span>
               </Link>
