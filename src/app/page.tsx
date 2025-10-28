@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BarChart3, Users } from "lucide-react";
+import RecentUserList from "@/components/user/UserList";
 
 // Mock data for the chart
 const chartData = {
@@ -32,7 +33,7 @@ const chartData = {
   ],
 };
 
-const StatCard = ({
+export const StatCard = ({
   title,
   value,
   icon: Icon,
@@ -45,15 +46,15 @@ const StatCard = ({
   change?: string;
   isNegative?: boolean;
 }) => (
-  <Card className='bg-white border-0 shadow-lg'>
+  <Card className='bg-[#374151] border-0 shadow-lg'>
     <CardContent className='p-'>
       <div className='flex items-center gap-4'>
-        <div className='p-3 bg-[#aaa3a34f] rounded-full'>
-          <Icon className='h-6 w-6 text-gray-600' />
+        <div className='p-3 bg-[#37415167] rounded-full'>
+          <Icon className='h-6 w-6 text-[#66F1FC]' />
         </div>
         <div>
-          <p className='text-sm font-medium text-gray-600 mb-1'>{title}</p>
-          <p className='text-2xl font-bold text-gray-900'>{value}</p>
+          <p className='text-base text-gray-200 mb-1'>{title}</p>
+          <p className='text-2xl font-bold text-white'>{value}</p>
           {change && (
             <p
               className={`text-xs mt-1 ${
@@ -237,53 +238,8 @@ export default function Dashboard() {
           />
         </div>
 
-        {/* Chart Section */}
-        <Card className=' bg-white border-0 shadow-sm'>
-          <CardContent className='p-6'>
-            <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6'>
-              <div>
-                <p className='text-sm text-gray-600 mb-1'>Statistics</p>
-                <h2 className='text-xl font-semibold text-gray-900'>
-                  Payment received.
-                </h2>
-              </div>
-              <div className='flex items-center gap-6 mt-4 sm:mt-0'>
-                {/* Legend */}
-                <div className='flex items-center gap-4'>
-                  <div className='flex items-center gap-2'>
-                    <div className='w-3 h-3 rounded-full bg-amber-500'></div>
-                    <span className='text-sm text-gray-600'>This Month</span>
-                  </div>
-                  <div className='flex items-center gap-2'>
-                    <div className='w-3 h-3 rounded-full bg-blue-500'></div>
-                    <span className='text-sm text-gray-600'>Last Month</span>
-                  </div>
-                </div>
-                {/* Period Selector */}
-                <div className='flex bg-gray-100 rounded-lg p-1'>
-                  {periods.map((period) => (
-                    <Button
-                      key={period}
-                      variant={selectedPeriod === period ? "default" : "ghost"}
-                      size='sm'
-                      onClick={() => setSelectedPeriod(period)}
-                      className={`text-xs px-3 py-1 ${
-                        selectedPeriod === period
-                          ? "bg-amber-500 text-white hover:bg-amber-600"
-                          : "text-gray-600 hover:text-gray-900"
-                      }`}
-                    >
-                      {period}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div>
-              <LineChart data={chartData} selectedPeriod={selectedPeriod} />
-            </div>
-          </CardContent>
-        </Card>
+        {/* Recent User - Section */}
+        <RecentUserList />
       </div>
     </div>
   );
