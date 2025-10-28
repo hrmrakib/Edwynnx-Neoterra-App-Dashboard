@@ -54,9 +54,24 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className='min-h-screen bg-orange-50 flex items-center justify-center p-4'>
-      <div className='w-full max-w-md'>
-        <div className='bg-white rounded-2xl shadow-lg p-8 relative'>
+    <div className='min-h-screen bg-[#111827] flex items-center justify-center'>
+      <div className='w-full max-h-screen overflow-hidden bg-transparent rounded-sm shadow-lg relative'>
+        <Image
+          src='/auth-banner.png'
+          alt='Logo'
+          width={1200}
+          height={800}
+          className='h-full w-full object-cover'
+        />
+
+        {/* Centered text */}
+        <h2 className='absolute inset-0 flex items-center justify-center text-white font-bold text-4xl'>
+          Neoterra
+        </h2>
+      </div>
+
+      <div className='w-full bg-transparent shadow-lg border-0'>
+        <div className='w-[60%] mx-auto bg-[#1F2937] p-8 rounded-2xl'>
           {/* Back Button */}
           <button
             onClick={() => router.back()}
@@ -65,19 +80,14 @@ export default function ForgotPasswordPage() {
             <ArrowLeft className='w-5 h-5 text-gray-600' />
           </button>
 
-          {/* Logo */}
-          <div className='flex items-center justify-center text-center'>
-            <Image src='/logo.png' alt='Logo' width={200} height={200} />
-          </div>
-
           {/* Header */}
-          <div className='text-center mb-8'>
-            <h1 className='text-2xl font-bold text-gray-900 mb-2'>
+          <div className='text-center mb-8 flex items-center justify-center gap-4'>
+            <button onClick={() => router.back()} className="cursor-pointer">
+              <ArrowLeft className='w-5 h-5 text-gray-100' />
+            </button>
+            <h1 className='text-2xl font-bold text-gray-100 mb-2'>
               Forget Password
             </h1>
-            <p className='text-gray-600 text-sm'>
-              Please enter your email address to reset your account password.
-            </p>
           </div>
 
           {/* Form */}
@@ -86,9 +96,9 @@ export default function ForgotPasswordPage() {
             <div>
               <label
                 htmlFor='email'
-                className='block text-sm font-medium text-gray-700 mb-2'
+                className='block text-lg font-medium text-gray-100 mb-2'
               >
-                Email Address
+                Email
               </label>
               <div className='relative'>
                 <Mail className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5' />
@@ -103,7 +113,7 @@ export default function ForgotPasswordPage() {
                     }
                   }}
                   placeholder='Enter your email'
-                  className={`pl-10 h-12 bg-gray-50 border-gray-200 focus:border-orange-400 focus:ring-orange-400 ${
+                  className={`pl-10 h-[52px] !bg-[#374151] !border-none focus:border-orange-400 focus:ring-orange-400 ${
                     errors.email
                       ? "border-red-500 focus:border-red-500 focus:ring-red-500"
                       : ""
@@ -119,7 +129,7 @@ export default function ForgotPasswordPage() {
             {/* Submit Button */}
             <Button
               type='submit'
-              className='w-full h-12 bg-orange-400 hover:bg-orange-500 text-white font-medium rounded-lg transition-colors'
+              className='w-full h-12 bg-[#3F9E9D] hover:bg-[#39cfcd] text-white font-medium rounded-lg transition-colors'
               disabled={isLoading}
             >
               {isLoading ? "Sending..." : "Send OTP"}
@@ -128,11 +138,11 @@ export default function ForgotPasswordPage() {
 
           {/* Sign In Link */}
           <div className='text-center mt-6'>
-            <p className='text-gray-600 text-sm'>
+            <p className='text-gray-300 text-sm'>
               Already have an account?{" "}
               <Link
                 href='/auth/signin'
-                className='text-orange-400 hover:text-orange-500 font-medium transition-colors'
+                className='text-[#3F9E9D] hover:text-[#3ecac8] font-medium transition-colors'
               >
                 Sign in
               </Link>

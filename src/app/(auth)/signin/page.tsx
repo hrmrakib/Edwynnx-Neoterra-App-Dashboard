@@ -80,26 +80,21 @@ export default function SignInPage() {
       </div>
 
       <Card className='w-full bg-transparent shadow-lg border-0'>
-        <CardContent className='w-[80%] mx-auto bg-[#1F2937] p-8'>
-          {/* Logo */}
-          <div className='flex items-center justify-center text-center'>
-            <Image src='/logo.png' alt='Logo' width={200} height={200} />
-          </div>
-
+        <CardContent className='w-[60%] mx-auto bg-[#1F2937] p-8 rounded-2xl'>
           {/* Header */}
           <div className='text-center mb-8'>
-            <h1 className='text-2xl font-bold text-gray-900 mb-2'>Sign in</h1>
-            <p className='text-gray-600 text-sm leading-relaxed'>
-              Enter your email address and password to access your account.
-            </p>
+            <h1 className='text-2xl font-bold text-[#D1D5DB] mb-2'>Sign in</h1>
           </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className='space-y-6'>
             {/* Email Address */}
             <div className='space-y-2'>
-              <Label htmlFor='email' className='text-gray-700 font-medium'>
-                Email Address
+              <Label
+                htmlFor='email'
+                className='text-[#F9FAFB] text-lg font-medium'
+              >
+                Email
               </Label>
               <div className='relative'>
                 <Mail className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4' />
@@ -110,7 +105,7 @@ export default function SignInPage() {
                   placeholder='Enter your email'
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`pl-10 bg-gray-50 border-gray-200 focus:bg-white ${
+                  className={`pl-10 h-[52px] !bg-[#374151] !border-none focus:bg-white ${
                     errors.email ? "border-red-500" : ""
                   }`}
                 />
@@ -122,7 +117,10 @@ export default function SignInPage() {
 
             {/* Password */}
             <div className='space-y-2'>
-              <Label htmlFor='password' className='text-gray-700 font-medium'>
+              <Label
+                htmlFor='password'
+                className='text-[#F9FAFB] text-lg font-medium'
+              >
                 Password
               </Label>
               <div className='relative'>
@@ -134,7 +132,7 @@ export default function SignInPage() {
                   placeholder='Min 8 character'
                   value={formData.password}
                   onChange={handleInputChange}
-                  className={`pl-10 pr-10 bg-gray-50 border-gray-200 focus:bg-white ${
+                  className={`pl-10 h-[52px] !bg-[#374151] !border-none focus:bg-white ${
                     errors.password ? "border-red-500" : ""
                   }`}
                 />
@@ -159,7 +157,7 @@ export default function SignInPage() {
             <div className='text-right'>
               <Link
                 href='/auth/forgot-password'
-                className='text-orange-500 text-sm hover:text-orange-600 transition-colors'
+                className='text-[#40EDFB] text-sm hover:text-[#40EDFB] transition-colors'
               >
                 Forgot password?
               </Link>
@@ -169,28 +167,18 @@ export default function SignInPage() {
             <Button
               type='submit'
               disabled={isLoading}
-              className='w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 rounded-lg transition-colors'
+              className='w-full h-12 bg-[#3F9E9D] hover:bg-[#31c5c3] text-white font-medium py-3 rounded-lg transition-colors'
             >
               {isLoading ? "Signing In..." : "Sign in"}
             </Button>
 
-            {/* Divider */}
-            <div className='relative my-6'>
-              <div className='absolute inset-0 flex items-center'>
-                <div className='w-full border-t border-gray-200' />
-              </div>
-              <div className='relative flex justify-center text-sm'>
-                <span className='px-4 bg-white text-gray-500'>Or</span>
-              </div>
-            </div>
-
             {/* Sign Up Link */}
             <div className='text-center'>
-              <span className='text-gray-600 text-sm'>
+              <span className='text-[#D1D5DB] text-base'>
                 Don&apos;t have an account?{" "}
                 <Link
-                  href='/auth/signup'
-                  className='text-orange-500 hover:text-orange-600 font-medium transition-colors'
+                  href='/signup'
+                  className='text-[#40EDFB] hover:text-[#40EDFB] font-medium transition-colors'
                 >
                   Sign up
                 </Link>
