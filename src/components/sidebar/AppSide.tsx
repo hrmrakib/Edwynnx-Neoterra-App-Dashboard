@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import type React from "react";
@@ -14,7 +15,6 @@ import {
   SidebarFooter,
 } from "@/components/ui/sidebar";
 import { usePathname, useRouter } from "next/navigation";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function DashboardSidebar() {
@@ -47,15 +47,11 @@ export default function DashboardSidebar() {
           <SidebarContent>
             <Link
               href='/'
-              className='flex items-center justify-center gap-2 px-3 py-3'
+              className='flex items-center justify-center gap-2 px-3 py-8'
             >
-              <Image
-                src='/logo.png'
-                alt='logo'
-                width={140}
-                height={140}
-                className=''
-              />
+              <h2 className='text-4xl font-semibold text-[#00FFFF]'>
+                Neoterra
+              </h2>
             </Link>
 
             <SidebarMenu className='px-6 space-y-2'>
@@ -67,62 +63,21 @@ export default function DashboardSidebar() {
               />
 
               <NavItem
-                href='/user-management'
+                href='/events'
                 icon={Users}
-                label='User Management'
+                label='Events'
                 active={
-                  pathname === "/user-management" ||
-                  pathname.startsWith("/user-management")
+                  pathname === "/events" || pathname.startsWith("/events/")
                 }
               />
 
               <NavItem
-                href='/administrators'
+                href='/transaction'
                 icon={Settings}
-                label='Administrators'
+                label='Transaction'
                 active={
-                  pathname === "/administrators" ||
-                  pathname.startsWith("/administrators/")
-                }
-              />
-
-              <NavItem
-                href='/subscribers'
-                icon={Settings}
-                label='Subscriber'
-                active={
-                  pathname === "/subscribers" ||
-                  pathname.startsWith("/subscribers/")
-                }
-              />
-
-              <NavItem
-                href='/spiral-management'
-                icon={Settings}
-                label='Spiral Management'
-                active={
-                  pathname === "/spiral-management" ||
-                  pathname.startsWith("/spiral-management/")
-                }
-              />
-
-              <NavItem
-                href='/voice-drop-library'
-                icon={Settings}
-                label='Voice Drop Library'
-                active={
-                  pathname === "/voice-drop-library" ||
-                  pathname.startsWith("/voice-drop-library/")
-                }
-              />
-
-              <NavItem
-                href='/journal-pro-manager'
-                icon={Settings}
-                label='Journal Pro. Manager'
-                active={
-                  pathname === "/journal-pro-manager" ||
-                  pathname.startsWith("/journal-pro-manager/")
+                  pathname === "/transaction" ||
+                  pathname.startsWith("/transaction/")
                 }
               />
 
@@ -204,21 +159,18 @@ function NavItem({ href, icon: Icon, label, active = true }: NavItemProps) {
           className={cn(
             "flex items-center gap-3 px-4 !py-5 transition-colors rounded-full",
             active
-              ? "bg-sidebar-link-bg text-sidebar-active-color"
-              : "text-sidebar-color hover:bg-sidebar-link-bg hover:text-[#fff]"
+              ? "bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 text-[#fff]"
+              : "hover:bg-bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 hover:text-[#fff]"
           )}
         >
           <Icon size={18} />
           <span
             className={`text-lg text-nowrap ${
-              active ? "text-sidebarActiveColor" : ""
+              active ? "text-[#E5E7EB]" : "text-[#E5E7EB]"
             }`}
           >
             {label}
           </span>
-          {active && (
-            <div className='absolute -left-6 h-10 w-2.5 bg-sidebar-link-bg rounded-r-2xl'></div>
-          )}
         </Link>
       </SidebarMenuButton>
     </SidebarMenuItem>
